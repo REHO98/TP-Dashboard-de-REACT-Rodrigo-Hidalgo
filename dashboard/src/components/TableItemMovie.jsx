@@ -14,7 +14,7 @@ export const TableItemMovie = ({ title, rating, length, genres, awards }) => {
             <li key={id}>{genre}</li>
           ))
           :
-            <p>SIN ESPESIFICAR</p>
+            <p>Genero sin espesificar</p>
           }
         </ul>
       </td>
