@@ -2,21 +2,21 @@ import { ContentRowItemMovie } from "./ContentRowItemMovie";
 
 const data = [
   {
-    id : crypto.randomUUID(),
+    id: crypto.randomUUID(),
     color: "primary",
     title: "Movies in Data Base",
     value: 21,
     icon: "fa-film",
   },
   {
-    id : crypto.randomUUID(),
+    id: crypto.randomUUID(),
     color: "success",
     title: "Total awards",
     value: 79,
     icon: "fa-award",
   },
   {
-    id : crypto.randomUUID(),
+    id: crypto.randomUUID(),
     color: "warning",
     title: "Actors quantity",
     value: 49,
@@ -25,16 +25,18 @@ const data = [
 ];
 export const ContentRowMovies = () => {
   return (
-    <div className="row">
-      {data.map(({ id, color, title, value, icon }) => (
-        <ContentRowItemMovie
-          key={id}
-          color={color}
-          title={title}
-          value={value}
-          icon={icon}
-        />
-      ))}
+    <div className="col-12">
+      <div className="row">
+        {data.map(({ id, color, title, value, icon }) => (
+          <ContentRowItemMovie
+            key={id}
+            color={color}
+            title={title}
+            value={value}
+            icon={icon}
+          />
+        ))}
+      </div>
     </div>
   );
-}
+};

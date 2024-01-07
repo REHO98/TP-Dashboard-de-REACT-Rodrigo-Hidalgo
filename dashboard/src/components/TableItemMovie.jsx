@@ -1,23 +1,12 @@
 import PropTypes from "prop-types";
 
-export const TableItemMovie = ({ title, rating, length, genres, awards }) => {
+export const TableItemMovie = ({ title, rating, length, genre, awards }) => {
   return (
     <tr>
       <td>{title}</td>
       <td>{length}</td>
       <td>{rating}</td>
-      <td>
-        <ul>
-          {
-            genres.length ?
-          genres.map((genre, id) => (
-            <li key={id}>{genre}</li>
-          ))
-          :
-            <p>Genero sin espesificar</p>
-          }
-        </ul>
-      </td>
+      <td>{genre?.name}</td>
       <td>{awards}</td>
     </tr>
   );
@@ -28,9 +17,9 @@ TableItemMovie.propTypes = {
   rating: PropTypes.number,
   awards: PropTypes.number,
   length: PropTypes.number,
-  genres: PropTypes.array,
+  genre: PropTypes.string,
 }
 
 TableItemMovie.defaultProps = {
-    genres: []
-}
+  genre: "Genero sin espesificar",
+};
